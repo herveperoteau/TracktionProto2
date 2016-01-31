@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9515"/>
+    </dependencies>
+    <scenes>
+        <!--Recording Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="RecordingInterfaceController" customModule="TracktionProto2_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="left" verticalAlignment="center" layout="vertical" id="pW0-Aj-DST" userLabel="GroupNone">
+                            <items>
+                                <group width="1" alignment="left" id="DeT-d4-ZgE" userLabel="Group Duration">
+                                    <items>
+                                        <label alignment="left" text="Duration :" id="tLf-J9-khG"/>
+                                        <label alignment="right" text="60" id="TU8-Ij-rQa"/>
+                                    </items>
+                                </group>
+                                <group width="1" alignment="left" id="6fI-Pp-uXf">
+                                    <items>
+                                        <button width="0.40000000000000002" alignment="left" title="-" id="yfT-8r-KS6">
+                                            <connections>
+                                                <action selector="decrementDuration" destination="AgC-eL-Hgc" id="JJH-P2-wH6"/>
+                                            </connections>
+                                        </button>
+                                        <button width="0.40000000000000002" alignment="right" title="+" id="Iu5-hc-dmI">
+                                            <connections>
+                                                <action selector="incrementDuration" destination="AgC-eL-Hgc" id="CKB-U4-tLI"/>
+                                            </connections>
+                                        </button>
+                                    </items>
+                                </group>
+                                <button width="1" alignment="left" verticalAlignment="bottom" title="START" id="WZX-S2-R6G">
+                                    <connections>
+                                        <action selector="startAction" destination="AgC-eL-Hgc" id="xWG-rs-zFb"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" verticalAlignment="center" layout="vertical" id="0cL-CH-4LT" userLabel="GroupRecording">
+                            <items>
+                                <group width="1" alignment="left" id="SwJ-CB-BHQ" userLabel="Group Start">
+                                    <items>
+                                        <label alignment="left" text="Start:" id="crR-3Z-6XV"/>
+                                        <label alignment="right" text="17:35:10" id="dyY-xz-z4q"/>
+                                    </items>
+                                </group>
+                                <group width="1" alignment="left" id="bgz-MY-k0a" userLabel="Group End">
+                                    <items>
+                                        <label alignment="left" text="End:" id="iUY-Mo-T5k"/>
+                                        <label alignment="right" text="17:36:10" id="0tO-EU-0uy"/>
+                                    </items>
+                                </group>
+                                <button width="1" alignment="left" verticalAlignment="bottom" title="STOP" id="UKh-zj-GQr">
+                                    <connections>
+                                        <action selector="stopAction" destination="AgC-eL-Hgc" id="I5Y-9Q-ezD"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" verticalAlignment="center" layout="vertical" id="jKO-q2-Oad" userLabel="GroupEnd">
+                            <items>
+                                <group width="1" alignment="left" id="Qau-Gc-dEI" userLabel="Group Start">
+                                    <items>
+                                        <label alignment="left" text="Start:" id="0bg-MR-EiQ"/>
+                                        <label alignment="right" text="17:35:10" id="hVu-Ph-Ynj"/>
+                                    </items>
+                                </group>
+                                <group width="1" alignment="left" id="yQ2-CO-nky" userLabel="Group End">
+                                    <items>
+                                        <label alignment="left" text="Stop:" id="LD8-Su-nVI"/>
+                                        <label alignment="right" text="17:36:10" id="ZOj-5V-fZ1"/>
+                                    </items>
+                                </group>
+                                <button width="1" alignment="left" verticalAlignment="bottom" title="RESET" id="ECU-By-YxF">
+                                    <connections>
+                                        <action selector="resetAction" destination="AgC-eL-Hgc" id="27e-g1-mZN"/>
+                                    </connections>
+                                </button>
+                                <button width="1" alignment="left" verticalAlignment="bottom" title="LIST" id="H2l-0A-cKN">
+                                    <connections>
+                                        <action selector="listAction" destination="AgC-eL-Hgc" id="aLy-KY-FlJ"/>
+                                        <segue destination="fP3-oa-Dbe" kind="push" identifier="getList" id="EDG-T6-9Op"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="groupEnd" destination="jKO-q2-Oad" id="mpB-KS-af5"/>
+                        <outlet property="groupNone" destination="pW0-Aj-DST" id="iyq-nU-Def"/>
+                        <outlet property="groupRecording" destination="0cL-CH-4LT" id="WC1-5d-Mrw"/>
+                        <outlet property="lbDuration" destination="TU8-Ij-rQa" id="QCA-pj-kXQ"/>
+                        <outlet property="lbEndStart" destination="hVu-Ph-Ynj" id="VG3-Hb-RBA"/>
+                        <outlet property="lbEndStop" destination="ZOj-5V-fZ1" id="mGf-aT-UP1"/>
+                        <outlet property="lbRecordingEnd" destination="0tO-EU-0uy" id="yb3-0Z-Cf0"/>
+                        <outlet property="lbRecordingStart" destination="dyY-xz-z4q" id="JCx-1d-G6y"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="202" y="384.25"/>
+        </scene>
+        <!--Session Interface Controller-->
+        <scene sceneID="QNl-NH-SWd">
+            <objects>
+                <controller id="fP3-oa-Dbe" customClass="SessionInterfaceController" customModule="TracktionProto2_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="left" layout="vertical" id="RdB-Eu-9H6" userLabel="GroupRecap">
+                            <items>
+                                <group width="1" alignment="left" id="awe-GP-oER" userLabel="Group Start">
+                                    <items>
+                                        <label alignment="left" text="Start:" id="K84-nb-y9M"/>
+                                        <label alignment="right" text="17:35:10" id="p5i-dJ-lfn"/>
+                                    </items>
+                                </group>
+                                <group width="1" alignment="left" id="JPw-O2-JGW" userLabel="Group End">
+                                    <items>
+                                        <label alignment="left" text="Stop:" id="Wcu-kQ-b99"/>
+                                        <label alignment="right" text="17:36:10" id="5py-av-1P4"/>
+                                    </items>
+                                </group>
+                                <group width="1" alignment="left" id="sdV-g7-yni" userLabel="Group Button End">
+                                    <items>
+                                        <button width="1" alignment="left" title="GET" id="m0o-1e-mFL"/>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" layout="vertical" id="suR-bm-1ZP" userLabel="GroupResult">
+                            <items>
+                                <group width="1" alignment="left" id="i05-lR-qWR" userLabel="GroupQuantity">
+                                    <items>
+                                        <label alignment="left" text="Nb:" id="jg2-mT-iKb"/>
+                                        <label alignment="right" text="000000" id="fZB-Gs-MPQ"/>
+                                    </items>
+                                </group>
+                                <group width="1" alignment="left" id="f0t-3H-DWf" userLabel="Group Button Save">
+                                    <items>
+                                        <button width="1" alignment="left" title="SAVE" id="UKs-Yh-wVL"/>
+                                    </items>
+                                </group>
+                                <group width="1" alignment="left" layout="vertical" spacing="15" id="egD-fh-lls" userLabel="Group Saving">
+                                    <items>
+                                        <group width="1" alignment="left" layout="vertical" id="t86-uJ-g1p" userLabel="Group Anchor Saving">
+                                            <items>
+                                                <label width="1" alignment="left" text="Anchor:" id="ldI-Gu-lIJ"/>
+                                                <label width="1" alignment="left" text="0000000000" minimumScaleFactor="0.5" id="bQE-IR-WND" userLabel="000000000000"/>
+                                            </items>
+                                        </group>
+                                        <group width="1" alignment="left" layout="vertical" id="2Vm-ZK-IQ7" userLabel="Group Count Saving">
+                                            <items>
+                                                <label width="1" alignment="left" text="Saving:" id="7Xa-27-tNP" userLabel="Saving:"/>
+                                                <label width="1" alignment="left" text="000000" id="swW-ss-3rv"/>
+                                            </items>
+                                        </group>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="445" y="383.5"/>
+        </scene>
+    </scenes>
+</document>
