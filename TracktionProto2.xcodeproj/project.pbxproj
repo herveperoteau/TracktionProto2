@@ -25,6 +25,10 @@
 		09D2ED4B1C56B7EF008A247D /* RecordingInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D2ED4A1C56B7EF008A247D /* RecordingInterfaceController.swift */; };
 		09D2ED4D1C56B7EF008A247D /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D2ED4C1C56B7EF008A247D /* ExtensionDelegate.swift */; };
 		09D2ED4F1C56B7EF008A247D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09D2ED4E1C56B7EF008A247D /* Assets.xcassets */; };
+		09F7350C1C711395002D03F0 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F7350A1C711395002D03F0 /* Realm.framework */; };
+		09F7350D1C711395002D03F0 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 09F7350A1C711395002D03F0 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		09F7350E1C711395002D03F0 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F7350B1C711395002D03F0 /* RealmSwift.framework */; };
+		09F7350F1C711395002D03F0 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 09F7350B1C711395002D03F0 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +71,18 @@
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		09F735101C711395002D03F0 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				09F7350F1C711395002D03F0 /* RealmSwift.framework in Embed Frameworks */,
+				09F7350D1C711395002D03F0 /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +108,8 @@
 		09D2ED4C1C56B7EF008A247D /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		09D2ED4E1C56B7EF008A247D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09D2ED501C56B7EF008A247D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09F7350A1C711395002D03F0 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		09F7350B1C711395002D03F0 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +117,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09F7350E1C711395002D03F0 /* RealmSwift.framework in Frameworks */,
+				09F7350C1C711395002D03F0 /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +135,8 @@
 		09D2ED1B1C56B7EE008A247D = {
 			isa = PBXGroup;
 			children = (
+				09F7350A1C711395002D03F0 /* Realm.framework */,
+				09F7350B1C711395002D03F0 /* RealmSwift.framework */,
 				09D2ED261C56B7EE008A247D /* TracktionProto2 */,
 				09D2ED3A1C56B7EE008A247D /* TracktionProto2 WatchKit App */,
 				09D2ED491C56B7EF008A247D /* TracktionProto2 WatchKit Extension */,
@@ -183,6 +205,8 @@
 				09D2ED211C56B7EE008A247D /* Frameworks */,
 				09D2ED221C56B7EE008A247D /* Resources */,
 				09D2ED5A1C56B7EF008A247D /* Embed Watch Content */,
+				09F735101C711395002D03F0 /* Embed Frameworks */,
+				09F735111C7113EB002D03F0 /* Run Script Realm */,
 			);
 			buildRules = (
 			);
@@ -298,6 +322,25 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		09F735111C7113EB002D03F0 /* Run Script Realm */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+			);
+			name = "Run Script Realm";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		09D2ED201C56B7EE008A247D /* Sources */ = {
@@ -512,6 +555,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TracktionProto2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.peroteau.herve.TracktionProto2;
@@ -523,6 +570,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TracktionProto2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.peroteau.herve.TracktionProto2;
