@@ -61,6 +61,13 @@ class TrackSessionManager {
     formatter.timeStyle = .MediumStyle
     return formatter.stringFromDate(dateToDisplay)
   }
-  
+
+  func fulldateDisplayedForDate(dateToDisplay: NSDate) -> String {
+    let formatter = NSDateFormatter()
+    formatter.dateStyle = .ShortStyle
+    formatter.timeStyle = .LongStyle
+    return formatter.stringFromDate(dateToDisplay)
+  }
+
 }
 

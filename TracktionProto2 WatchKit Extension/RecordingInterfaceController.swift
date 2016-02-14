@@ -8,6 +8,12 @@
 
 import WatchKit
 import Foundation
+import CoreMotion
+
+let kIncrement : Double = 10
+let kDurationMin : Double = 10
+let kDurationMax : Double = 60
+let kSegueGetList = "getList"
 
 class RecordingInterfaceController: WKInterfaceController {
   
@@ -31,8 +37,12 @@ class RecordingInterfaceController: WKInterfaceController {
     sessionManager = TrackSessionManager()
     session = sessionManager.loadSession()
     configureInterfaceWithCurrentSession()
+    
+    let dateBoot = NSDate(timeIntervalSince1970: NSProcessInfo().systemUptime)
+    print("saveAccData systemUptime=\(NSProcessInfo().systemUptime) dateBoot=\(dateBoot)")
   }
   
+ 
   func configureInterfaceWithCurrentSession() {
     
     if let _ = session.dateStop, _ = session.dateStart {
@@ -113,29 +123,55 @@ class RecordingInterfaceController: WKInterfaceController {
   }
   
   @IBAction func decrementDuration() {
-    if (session.durationMax > 10) {
-      session.durationMax-=10
+    if (session.durationMax >= kDurationMin+kIncrement) {
+      session.durationMax-=kIncrement
       TrackSessionManager().saveSession(session)
       configureInterfaceWithCurrentSession()
     }
   }
   
   @IBAction func incrementDuration() {
-    session.durationMax+=10
+    if (session.durationMax <= kDurationMax-kIncrement) {
+      session.durationMax+=kIncrement
+      TrackSessionManager().saveSession(session)
+      configureInterfaceWithCurrentSession()
+    }
+  }
+  
+  @IBAction func startAction() {
+    if Platform.isSimulator {
+      print("isSiumlator : not used CMSensorRecorder")
+    }
+    else {
+      // sync request authorization on iPhone
+      if !CMSensorRecorder.isAccelerometerRecordingAvailable() {
+        presentError("Authorization required!\nGo on your iPhone in Settings > Privacy > Motion & Fitness")
+        return
+      }
+      
+      session.dateStart = NSDate()
+      let recorder = CMSensorRecorder()
+      recorder.recordAccelerometerForDuration(session.durationMax)
+    }
+    
     TrackSessionManager().saveSession(session)
     configureInterfaceWithCurrentSession()
   }
   
-  @IBAction func startAction() {
-    session.dateStart = NSDate()
-    TrackSessionManager().saveSession(session)
-    configureInterfaceWithCurrentSession()
+  func presentError(message: String?) {
+    presentControllerWithName("ErrorInterfaceController", context: message)
   }
   
   @IBAction func stopAction() {
     session.dateStop = NSDate()
-    TrackSessionManager().saveSession(session)
+    let dateEnd = session.dateStart!.dateByAddingTimeInterval(session.durationMax)
+    if (session.dateStop! > dateEnd) {
+      // force to end
+      session.dateStop = dateEnd
+    }
+
     configureInterfaceWithCurrentSession()
+    TrackSessionManager().saveSession(session)
   }
   
   @IBAction func resetAction() {
@@ -145,7 +181,12 @@ class RecordingInterfaceController: WKInterfaceController {
     configureInterfaceWithCurrentSession()
   }
   
-  @IBAction func listAction() {
-    print("listAction ...")
+  override func contextForSegueWithIdentifier(segueIdentifier: String) -> AnyObject? {
+    if segueIdentifier == kSegueGetList {
+      return session
+    }
+    else {
+      return nil
+    }
   }
 }

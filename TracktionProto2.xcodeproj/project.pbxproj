@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0919897F1C665D0400D72DCE /* ErrorInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0919897E1C665D0400D72DCE /* ErrorInterfaceController.swift */; };
+		091989811C6672F000D72DCE /* PlatformHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091989801C6672F000D72DCE /* PlatformHelper.swift */; };
 		096B98D01C5E6A2F002B620C /* SessionInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096B98CF1C5E6A2F002B620C /* SessionInterfaceController.swift */; };
 		096B98D21C5E6C1D002B620C /* TrackSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096B98D11C5E6C1D002B620C /* TrackSessionManager.swift */; };
 		096B98D41C5E6C47002B620C /* TrackSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096B98D31C5E6C47002B620C /* TrackSession.swift */; };
@@ -68,6 +70,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0919897E1C665D0400D72DCE /* ErrorInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorInterfaceController.swift; sourceTree = "<group>"; };
+		091989801C6672F000D72DCE /* PlatformHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlatformHelper.swift; sourceTree = "<group>"; };
 		096B98CF1C5E6A2F002B620C /* SessionInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionInterfaceController.swift; sourceTree = "<group>"; };
 		096B98D11C5E6C1D002B620C /* TrackSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackSessionManager.swift; sourceTree = "<group>"; };
 		096B98D31C5E6C47002B620C /* TrackSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackSession.swift; sourceTree = "<group>"; };
@@ -162,6 +166,8 @@
 				096B98D11C5E6C1D002B620C /* TrackSessionManager.swift */,
 				096B98D31C5E6C47002B620C /* TrackSession.swift */,
 				096B98D51C5E837B002B620C /* DateCompare.swift */,
+				0919897E1C665D0400D72DCE /* ErrorInterfaceController.swift */,
+				091989801C6672F000D72DCE /* PlatformHelper.swift */,
 			);
 			path = "TracktionProto2 WatchKit Extension";
 			sourceTree = "<group>";
@@ -311,6 +317,8 @@
 				096B98D21C5E6C1D002B620C /* TrackSessionManager.swift in Sources */,
 				096B98D01C5E6A2F002B620C /* SessionInterfaceController.swift in Sources */,
 				09D2ED4D1C56B7EF008A247D /* ExtensionDelegate.swift in Sources */,
+				091989811C6672F000D72DCE /* PlatformHelper.swift in Sources */,
+				0919897F1C665D0400D72DCE /* ErrorInterfaceController.swift in Sources */,
 				09D2ED4B1C56B7EF008A247D /* RecordingInterfaceController.swift in Sources */,
 				096B98D61C5E837B002B620C /* DateCompare.swift in Sources */,
 			);
