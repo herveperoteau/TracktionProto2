@@ -15,6 +15,7 @@ let kSavingTimestampAnchor="savingTimestampAnchor"
 let kSavingFirstTimestamp="savingFirstTimestamp"
 let kSavingCountSaving="savingCountSaving"
 let kSavingFinished="savingFinished"
+let kSavingChunkInProgress="savingChunkInProgress"
 
 class SessionInterfaceController: WKInterfaceController {
   
@@ -54,7 +55,8 @@ class SessionInterfaceController: WKInterfaceController {
     let sessionIdSaving = defaults.integerForKey(kSavingSessionId)
     if sessionIdSaving == session.sessionId {
       let finished = defaults.boolForKey(kSavingFinished)
-      print("finished=\(finished)")
+      let savingInProgress = defaults.boolForKey(kSavingChunkInProgress)
+      print("finished=\(finished) savingInProgress=\(savingInProgress)")
       if (finished) {
         let count = defaults.integerForKey(kSavingCountSaving)
         let anchor = defaults.integerForKey(kSavingTimestampAnchor)
@@ -62,7 +64,9 @@ class SessionInterfaceController: WKInterfaceController {
         self.lbCountSaving.setText("\(count) END")
       }
       else {
-        startQuery()
+        if (!savingInProgress) {
+          startQuery()
+        }
       }
     }
   }
@@ -121,6 +125,10 @@ class SessionInterfaceController: WKInterfaceController {
       return
     }
     
+    let defaults = NSUserDefaults.standardUserDefaults()
+    defaults.setBool(true, forKey: kSavingChunkInProgress)
+    defaults.synchronize()
+
     dispatch_async(dispatch_get_main_queue()) {
       self.lbAnchorSaving.setText("...")
       self.lbCountSaving.setText("...")
@@ -173,6 +181,9 @@ class SessionInterfaceController: WKInterfaceController {
           self.saveListDatas(accDataList)
         }
         else {
+          defaults.setBool(false, forKey: kSavingChunkInProgress)
+          defaults.synchronize()
+
           NSLog("AccDataList empty with dateStart:\(dateStart) dateEndBlock:\(dateEndBlock)")
           dispatch_async(dispatch_get_main_queue()) {
             let count = defaults.integerForKey(kSavingCountSaving)
@@ -201,6 +212,9 @@ class SessionInterfaceController: WKInterfaceController {
   func saveListDatas(list: CMSensorDataList!) {
     
     NSProcessInfo().performExpiringActivityWithReason("saveListDatas") { expired in
+      
+      let defaults = NSUserDefaults.standardUserDefaults()
+
       if !expired {
         NSLog("saveListDatas : \(list)")
         var count=0
@@ -212,9 +226,11 @@ class SessionInterfaceController: WKInterfaceController {
           }
         }
         
+        // chunck ended
+        defaults.setBool(false, forKey: kSavingChunkInProgress)
+
         if (count==0) {
           dispatch_async(dispatch_get_main_queue()) {
-            let defaults = NSUserDefaults.standardUserDefaults()
             let count = defaults.integerForKey(kSavingCountSaving)
             self.lbCountSaving.setText("\(count) END")
             defaults.setBool(true, forKey: kSavingFinished)
@@ -223,7 +239,10 @@ class SessionInterfaceController: WKInterfaceController {
       }
       else {
         print("No more background activity permitted")
+        defaults.setBool(false, forKey: kSavingChunkInProgress)
       }
+      
+      defaults.synchronize()
     }
   }
 
