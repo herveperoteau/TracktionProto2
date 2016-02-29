@@ -1,1 +1,2 @@
-github "realm/realm-cocoa" "v0.98.1"
+github "ninjaprox/NVActivityIndicatorView" "v2.3"
+github "realm/realm-cocoa" "v0.98.3"
