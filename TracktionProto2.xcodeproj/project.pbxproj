@@ -13,8 +13,10 @@
 		096B98D21C5E6C1D002B620C /* TrackSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096B98D11C5E6C1D002B620C /* TrackSessionManager.swift */; };
 		096B98D41C5E6C47002B620C /* TrackSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096B98D31C5E6C47002B620C /* TrackSession.swift */; };
 		096B98D61C5E837B002B620C /* DateCompare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096B98D51C5E837B002B620C /* DateCompare.swift */; };
+		097DC2521C84913F0049D187 /* NVActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 097DC2511C84913E0049D187 /* NVActivityIndicatorView.framework */; };
+		097DC2531C8491920049D187 /* NVActivityIndicatorView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 097DC2511C84913E0049D187 /* NVActivityIndicatorView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		097DC2561C84987C0049D187 /* UIViewControllerIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097DC2551C84987C0049D187 /* UIViewControllerIndicator.swift */; };
 		09D2ED281C56B7EE008A247D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D2ED271C56B7EE008A247D /* AppDelegate.swift */; };
-		09D2ED2A1C56B7EE008A247D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D2ED291C56B7EE008A247D /* ViewController.swift */; };
 		09D2ED2D1C56B7EE008A247D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09D2ED2B1C56B7EE008A247D /* Main.storyboard */; };
 		09D2ED2F1C56B7EE008A247D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09D2ED2E1C56B7EE008A247D /* Assets.xcassets */; };
 		09D2ED321C56B7EE008A247D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09D2ED301C56B7EE008A247D /* LaunchScreen.storyboard */; };
@@ -29,6 +31,12 @@
 		09F7350D1C711395002D03F0 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 09F7350A1C711395002D03F0 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		09F7350E1C711395002D03F0 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F7350B1C711395002D03F0 /* RealmSwift.framework */; };
 		09F7350F1C711395002D03F0 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 09F7350B1C711395002D03F0 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		09F735141C712139002D03F0 /* RealmLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F735131C712139002D03F0 /* RealmLayer.swift */; };
+		09F735171C844C56002D03F0 /* WatchConnectivityLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F735161C844C56002D03F0 /* WatchConnectivityLayer.swift */; };
+		09F7351A1C84583A002D03F0 /* SessionsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F735191C84583A002D03F0 /* SessionsListVC.swift */; };
+		09F7351C1C845868002D03F0 /* SessionDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F7351B1C845868002D03F0 /* SessionDetailVC.swift */; };
+		09F7351F1C845972002D03F0 /* CellSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F7351E1C845972002D03F0 /* CellSession.swift */; };
+		09F735211C845998002D03F0 /* CellTrackEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F735201C845998002D03F0 /* CellTrackEvent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +85,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				097DC2531C8491920049D187 /* NVActivityIndicatorView.framework in Embed Frameworks */,
 				09F7350F1C711395002D03F0 /* RealmSwift.framework in Embed Frameworks */,
 				09F7350D1C711395002D03F0 /* Realm.framework in Embed Frameworks */,
 			);
@@ -92,9 +101,10 @@
 		096B98D11C5E6C1D002B620C /* TrackSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackSessionManager.swift; sourceTree = "<group>"; };
 		096B98D31C5E6C47002B620C /* TrackSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackSession.swift; sourceTree = "<group>"; };
 		096B98D51C5E837B002B620C /* DateCompare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateCompare.swift; sourceTree = "<group>"; };
+		097DC2511C84913E0049D187 /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NVActivityIndicatorView.framework; path = Carthage/Build/iOS/NVActivityIndicatorView.framework; sourceTree = "<group>"; };
+		097DC2551C84987C0049D187 /* UIViewControllerIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerIndicator.swift; sourceTree = "<group>"; };
 		09D2ED241C56B7EE008A247D /* TracktionProto2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TracktionProto2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09D2ED271C56B7EE008A247D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		09D2ED291C56B7EE008A247D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		09D2ED2C1C56B7EE008A247D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		09D2ED2E1C56B7EE008A247D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09D2ED311C56B7EE008A247D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -110,6 +120,12 @@
 		09D2ED501C56B7EF008A247D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09F7350A1C711395002D03F0 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		09F7350B1C711395002D03F0 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		09F735131C712139002D03F0 /* RealmLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmLayer.swift; sourceTree = "<group>"; };
+		09F735161C844C56002D03F0 /* WatchConnectivityLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchConnectivityLayer.swift; sourceTree = "<group>"; };
+		09F735191C84583A002D03F0 /* SessionsListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionsListVC.swift; sourceTree = "<group>"; };
+		09F7351B1C845868002D03F0 /* SessionDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionDetailVC.swift; sourceTree = "<group>"; };
+		09F7351E1C845972002D03F0 /* CellSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellSession.swift; sourceTree = "<group>"; };
+		09F735201C845998002D03F0 /* CellTrackEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellTrackEvent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +135,7 @@
 			files = (
 				09F7350E1C711395002D03F0 /* RealmSwift.framework in Frameworks */,
 				09F7350C1C711395002D03F0 /* Realm.framework in Frameworks */,
+				097DC2521C84913F0049D187 /* NVActivityIndicatorView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,9 +149,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		097DC2541C8498080049D187 /* UtilsUI */ = {
+			isa = PBXGroup;
+			children = (
+				097DC2551C84987C0049D187 /* UIViewControllerIndicator.swift */,
+			);
+			path = UtilsUI;
+			sourceTree = "<group>";
+		};
 		09D2ED1B1C56B7EE008A247D = {
 			isa = PBXGroup;
 			children = (
+				097DC2511C84913E0049D187 /* NVActivityIndicatorView.framework */,
 				09F7350A1C711395002D03F0 /* Realm.framework */,
 				09F7350B1C711395002D03F0 /* RealmSwift.framework */,
 				09D2ED261C56B7EE008A247D /* TracktionProto2 */,
@@ -157,8 +183,12 @@
 		09D2ED261C56B7EE008A247D /* TracktionProto2 */ = {
 			isa = PBXGroup;
 			children = (
+				097DC2541C8498080049D187 /* UtilsUI */,
+				09F7351D1C84592F002D03F0 /* TableViewCells */,
+				09F735181C8457AF002D03F0 /* ViewControllers */,
+				09F735151C844BF7002D03F0 /* WatchConnectivity */,
+				09F735121C7120DC002D03F0 /* RealmStack */,
 				09D2ED271C56B7EE008A247D /* AppDelegate.swift */,
-				09D2ED291C56B7EE008A247D /* ViewController.swift */,
 				09D2ED2B1C56B7EE008A247D /* Main.storyboard */,
 				09D2ED2E1C56B7EE008A247D /* Assets.xcassets */,
 				09D2ED301C56B7EE008A247D /* LaunchScreen.storyboard */,
@@ -194,6 +224,40 @@
 			path = "TracktionProto2 WatchKit Extension";
 			sourceTree = "<group>";
 		};
+		09F735121C7120DC002D03F0 /* RealmStack */ = {
+			isa = PBXGroup;
+			children = (
+				09F735131C712139002D03F0 /* RealmLayer.swift */,
+			);
+			path = RealmStack;
+			sourceTree = "<group>";
+		};
+		09F735151C844BF7002D03F0 /* WatchConnectivity */ = {
+			isa = PBXGroup;
+			children = (
+				09F735161C844C56002D03F0 /* WatchConnectivityLayer.swift */,
+			);
+			path = WatchConnectivity;
+			sourceTree = "<group>";
+		};
+		09F735181C8457AF002D03F0 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				09F735191C84583A002D03F0 /* SessionsListVC.swift */,
+				09F7351B1C845868002D03F0 /* SessionDetailVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		09F7351D1C84592F002D03F0 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				09F7351E1C845972002D03F0 /* CellSession.swift */,
+				09F735201C845998002D03F0 /* CellTrackEvent.swift */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -206,7 +270,7 @@
 				09D2ED221C56B7EE008A247D /* Resources */,
 				09D2ED5A1C56B7EF008A247D /* Embed Watch Content */,
 				09F735101C711395002D03F0 /* Embed Frameworks */,
-				09F735111C7113EB002D03F0 /* Run Script Realm */,
+				09F735111C7113EB002D03F0 /* Run Script Carthage */,
 			);
 			buildRules = (
 			);
@@ -324,7 +388,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		09F735111C7113EB002D03F0 /* Run Script Realm */ = {
+		09F735111C7113EB002D03F0 /* Run Script Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -332,8 +396,9 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/NVActivityIndicatorView.framework",
 			);
-			name = "Run Script Realm";
+			name = "Run Script Carthage";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,8 +412,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09D2ED2A1C56B7EE008A247D /* ViewController.swift in Sources */,
+				09F735171C844C56002D03F0 /* WatchConnectivityLayer.swift in Sources */,
+				09F735211C845998002D03F0 /* CellTrackEvent.swift in Sources */,
+				09F7351C1C845868002D03F0 /* SessionDetailVC.swift in Sources */,
 				09D2ED281C56B7EE008A247D /* AppDelegate.swift in Sources */,
+				097DC2561C84987C0049D187 /* UIViewControllerIndicator.swift in Sources */,
+				09F735141C712139002D03F0 /* RealmLayer.swift in Sources */,
+				09F7351F1C845972002D03F0 /* CellSession.swift in Sources */,
+				09F7351A1C84583A002D03F0 /* SessionsListVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
