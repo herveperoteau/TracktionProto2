@@ -52,6 +52,8 @@ class RMEvent: Object {
 
 class RealmLayer {
   
+  // MARK: - Mocks
+  
   func createMockDatas() {
 
     // Get the default Realm
@@ -62,7 +64,7 @@ class RealmLayer {
     if (sessions.count == 0) {
       
       var dateStart = NSDate(timeIntervalSinceNow: -86400).timeIntervalSince1970
-      var dateEnd = dateStart + 60
+      var dateEnd = dateStart + 60.0
       
       for (var sessionId=1; sessionId<20; sessionId++) {
 
@@ -77,10 +79,10 @@ class RealmLayer {
         for (var eventId=0; eventId<1000; eventId++) {
           let item = TrackDataItem()
           item.trackSessionId = sessionId
-          item.timeStamp = dateStart + (Double)(eventId/50)
+          item.timeStamp = dateStart + (Double)(eventId)/50.0
           item.accelerationX = 0.1
-          item.accelerationX = 0.2
-          item.accelerationX = 0.3
+          item.accelerationY = 0.2
+          item.accelerationZ = 0.3
           saveTrackDataItem(item)
         }
         
@@ -95,6 +97,8 @@ class RealmLayer {
     }
   }
   
+  // MARK: - Save
+
   func saveTrackSession(trackSession: TrackSession) -> RMSession {
     
     // Get the default Realm
@@ -158,6 +162,16 @@ class RealmLayer {
         session!.state = SessionStateKeepData
       }
     }
+  }
+
+  // MARK: - Query
+
+  func getListSessions() -> Results<RMSession> {
+    return try! Realm().objects(RMSession)
+  }
+  
+  func getEventsForSession(sessionId: Int) -> Results<RMEvent> {    
+    return try! Realm().objects(RMEvent).filter("sessionId == \(sessionId)")
   }
 }
 

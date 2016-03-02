@@ -8,9 +8,9 @@
 
 import UIKit
 import RealmSwift
-import NVActivityIndicatorView
 
-let kCellSessionIdentifier = "CellSession"
+private let kCellSessionIdentifier = "CellSession"
+private let kSegueShowDetailSession = "showDetailSession"
 
 class SessionsListVC: UITableViewController {
 
@@ -31,11 +31,21 @@ class SessionsListVC: UITableViewController {
   
   func loadData() {
     NSLog("loadData ...")
-    self.sessions = try! Realm().objects(RMSession)
+    self.sessions = RealmLayer().getListSessions()
     NSLog("loadData ended (count=\(self.sessions?.count))")
     self.tableView.reloadData()
   }
+  
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if segue.identifier == kSegueShowDetailSession {
+      let destVC = segue.destinationViewController as! SessionDetailVC;
+      let session = sender as! RMSession
+      destVC.sessionId = session.sessionId
+    }
+  }
 }
+
+// MARK: - TableViewDatasource
 
 extension SessionsListVC {
   
@@ -53,5 +63,12 @@ extension SessionsListVC {
     let sessionTrack = sessions![indexPath.row]
     cell.configureWithSessionTrack(sessionTrack)
     return cell
+  }
+  
+  override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    
+    tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    let session = sessions![indexPath.row]
+    performSegueWithIdentifier(kSegueShowDetailSession, sender: session)
   }
 }
