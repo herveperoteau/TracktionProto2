@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0919897F1C665D0400D72DCE /* ErrorInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0919897E1C665D0400D72DCE /* ErrorInterfaceController.swift */; };
 		091989811C6672F000D72DCE /* PlatformHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091989801C6672F000D72DCE /* PlatformHelper.swift */; };
+		096632E41C88DE43007658E8 /* SwiftCharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 096632E31C88DE43007658E8 /* SwiftCharts.framework */; };
+		096632E51C88DE4C007658E8 /* SwiftCharts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 096632E31C88DE43007658E8 /* SwiftCharts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		096B98D01C5E6A2F002B620C /* SessionInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096B98CF1C5E6A2F002B620C /* SessionInterfaceController.swift */; };
 		096B98D21C5E6C1D002B620C /* TrackSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096B98D11C5E6C1D002B620C /* TrackSessionManager.swift */; };
 		096B98D41C5E6C47002B620C /* TrackSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096B98D31C5E6C47002B620C /* TrackSession.swift */; };
@@ -85,6 +87,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				096632E51C88DE4C007658E8 /* SwiftCharts.framework in Embed Frameworks */,
 				097DC2531C8491920049D187 /* NVActivityIndicatorView.framework in Embed Frameworks */,
 				09F7350F1C711395002D03F0 /* RealmSwift.framework in Embed Frameworks */,
 				09F7350D1C711395002D03F0 /* Realm.framework in Embed Frameworks */,
@@ -97,6 +100,7 @@
 /* Begin PBXFileReference section */
 		0919897E1C665D0400D72DCE /* ErrorInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorInterfaceController.swift; sourceTree = "<group>"; };
 		091989801C6672F000D72DCE /* PlatformHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlatformHelper.swift; sourceTree = "<group>"; };
+		096632E31C88DE43007658E8 /* SwiftCharts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftCharts.framework; path = Carthage/Build/iOS/SwiftCharts.framework; sourceTree = "<group>"; };
 		096B98CF1C5E6A2F002B620C /* SessionInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionInterfaceController.swift; sourceTree = "<group>"; };
 		096B98D11C5E6C1D002B620C /* TrackSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackSessionManager.swift; sourceTree = "<group>"; };
 		096B98D31C5E6C47002B620C /* TrackSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackSession.swift; sourceTree = "<group>"; };
@@ -136,6 +140,7 @@
 				09F7350E1C711395002D03F0 /* RealmSwift.framework in Frameworks */,
 				09F7350C1C711395002D03F0 /* Realm.framework in Frameworks */,
 				097DC2521C84913F0049D187 /* NVActivityIndicatorView.framework in Frameworks */,
+				096632E41C88DE43007658E8 /* SwiftCharts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +165,7 @@
 		09D2ED1B1C56B7EE008A247D = {
 			isa = PBXGroup;
 			children = (
+				096632E31C88DE43007658E8 /* SwiftCharts.framework */,
 				097DC2511C84913E0049D187 /* NVActivityIndicatorView.framework */,
 				09F7350A1C711395002D03F0 /* Realm.framework */,
 				09F7350B1C711395002D03F0 /* RealmSwift.framework */,
@@ -397,6 +403,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/NVActivityIndicatorView.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftCharts.framework",
 			);
 			name = "Run Script Carthage";
 			outputPaths = (

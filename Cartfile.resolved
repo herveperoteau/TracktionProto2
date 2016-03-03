@@ -1,2 +1,3 @@
 github "ninjaprox/NVActivityIndicatorView" "v2.3"
+github "i-schuetz/SwiftCharts" "0.3"
 github "realm/realm-cocoa" "v0.98.3"
