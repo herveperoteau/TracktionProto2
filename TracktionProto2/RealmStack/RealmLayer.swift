@@ -80,9 +80,9 @@ class RealmLayer {
           let item = TrackDataItem()
           item.trackSessionId = sessionId
           item.timeStamp = dateStart + (Double)(eventId)/50.0
-          item.accelerationX = 0.1
-          item.accelerationY = 0.2
-          item.accelerationZ = 0.3
+          item.accelerationX = 0.1 + (Double)(eventId)/500.0
+          item.accelerationY = 0.2 + (Double)(eventId)/300.0
+          item.accelerationZ = 0.3 + (Double)(eventId)/200.0
           saveTrackDataItem(item)
         }
         
